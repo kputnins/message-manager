@@ -1,0 +1,24 @@
+{
+  "name": "message-manager",
+  "version": "1.0.0",
+  "description": "A simple publishes-subscriber messaging class",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/kputnins/message-manager.git",
+  "author": "Kaspars Putniņš",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "yarn clean && yarn transpile:esnext && yarn transpile:common",
+    "transpile:esnext": "tsc --project tsconfig.esnext.json",
+    "transpile:common": "tsc --project tsconfig.common.json"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  }
+}
