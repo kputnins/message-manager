@@ -1,5 +1,5 @@
 {
-  "name": "message-manager",
+  "name": "@kputnins/message-manager",
   "version": "1.0.0",
   "description": "A simple publishes-subscriber messaging class",
   "main": "dist/cjs/index.js",
@@ -16,9 +16,14 @@
     "clean": "rm -rf dist",
     "build": "yarn clean && yarn transpile:esnext && yarn transpile:common",
     "transpile:esnext": "tsc --project tsconfig.esnext.json",
-    "transpile:common": "tsc --project tsconfig.common.json"
+    "transpile:common": "tsc --project tsconfig.common.json",
+    "publish-package": "yarn build && npm publish"
   },
   "devDependencies": {
     "typescript": "^4.9.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
